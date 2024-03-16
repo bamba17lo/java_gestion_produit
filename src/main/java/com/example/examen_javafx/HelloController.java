@@ -1,14 +1,65 @@
 package com.example.examen_javafx;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
-public class HelloController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class HelloController implements Initializable {
     @FXML
-    private Label welcomeText;
+    private AnchorPane dynamique;
+    @FXML
+    void btn_Statistique(ActionEvent event) throws IOException {
+        System.out.println("statistique");
+        // affichage de la page statistique
+        Parent fxml = FXMLLoader.load(getClass().getResource("statistique-view.fxml"));
+        // Supprime tout les element du children
+        dynamique.getChildren().removeAll();
+        // Affiche les element du statistique
+        dynamique.getChildren().setAll(fxml);
+    }
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    void btn_Categorie(ActionEvent event) throws IOException {
+        System.out.println("Categorie");
+        System.out.println("Produit");
+        Parent fxml = FXMLLoader.load(getClass().getResource("categorie-view.fxml"));
+        // Supprime tout les element du children
+        dynamique.getChildren().removeAll();
+        // Affiche les element du statistique
+        dynamique.getChildren().setAll(fxml);
+    }
+
+    @FXML
+    void btn_Document(ActionEvent event) throws IOException {
+        System.out.println("Document");
+        System.out.println("Produit");
+        Parent fxml = FXMLLoader.load(getClass().getResource("document-view.fxml"));
+        // Supprime tout les element du children
+        dynamique.getChildren().removeAll();
+        // Affiche les element du statistique
+        dynamique.getChildren().setAll(fxml);
+    }
+
+    @FXML
+    void btn_Product(ActionEvent event) throws IOException {
+        System.out.println("Produit");
+        Parent fxml = FXMLLoader.load(getClass().getResource("produit-view.fxml"));
+        // Supprime tout les element du children
+        dynamique.getChildren().removeAll();
+        // Affiche les element du statistique
+        dynamique.getChildren().setAll(fxml);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }

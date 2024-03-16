@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.HelloController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="139.0" layoutY="172.0" prefHeight="802.4" prefWidth="1102.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="0.0" prefWidth="1102.0" style="-fx-background-color: #64b7f6;" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="68.0" fitWidth="87.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/images__1_-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="734.0" prefWidth="134.0" style="-fx-background-color: rgb(35, 50, 45);" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button contentDisplay="CENTER" layoutX="-6.0" layoutY="53.0" mnemonicParsing="false" onAction="#btn_Statistique" prefHeight="41.0" prefWidth="144.0" style="-fx-background-color: none;" text="Statistique" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button contentDisplay="CENTER" layoutX="-15.0" layoutY="112.0" mnemonicParsing="false" onAction="#btn_Product" prefHeight="41.0" prefWidth="144.0" style="-fx-background-color: none;" text="Produits" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button contentDisplay="CENTER" layoutX="-10.0" layoutY="174.0" mnemonicParsing="false" onAction="#btn_Categorie" prefHeight="41.0" prefWidth="144.0" style="-fx-background-color: none;" text="Catégorie" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button contentDisplay="CENTER" layoutX="-3.0" layoutY="240.0" mnemonicParsing="false" onAction="#btn_Document" prefHeight="41.0" prefWidth="144.0" style="-fx-background-color: none;" text="Documents" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane fx:id="dynamique" prefHeight="425.0" prefWidth="961.0" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
