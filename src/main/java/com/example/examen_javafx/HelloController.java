@@ -1,5 +1,6 @@
 package com.example.examen_javafx;
 
+import com.example.examen_javafx.model.BD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,13 +11,16 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
+    private static Connection connection;
     @FXML
     private AnchorPane dynamique;
     @FXML
     void btn_Statistique(ActionEvent event) throws IOException {
+        this.connection = new BD().getConnection();
         System.out.println("statistique");
         // affichage de la page statistique
         Parent fxml = FXMLLoader.load(getClass().getResource("statistique-view.fxml"));
@@ -28,8 +32,7 @@ public class HelloController implements Initializable {
 
     @FXML
     void btn_Categorie(ActionEvent event) throws IOException {
-        System.out.println("Categorie");
-        System.out.println("Produit");
+
         Parent fxml = FXMLLoader.load(getClass().getResource("categorie-view.fxml"));
         // Supprime tout les element du children
         dynamique.getChildren().removeAll();
@@ -60,6 +63,8 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
 
     }
 }
