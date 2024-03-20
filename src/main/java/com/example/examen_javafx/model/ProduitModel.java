@@ -16,9 +16,18 @@ public class ProduitModel {
     private String quantite;
     private String prixU;
     private String IdCategorie;
+    private String categorieLibelle;
 
     public String getLibelle() {
         return libelle;
+    }
+
+    public String getCategorieLibelle() {
+        return categorieLibelle;
+    }
+
+    public void setCategorieLibelle(String categorieLibelle) {
+        this.categorieLibelle = categorieLibelle;
     }
 
     public void setLibelle(String libelle) {
@@ -59,6 +68,7 @@ public class ProduitModel {
         this.prixU = prixU;
         this.IdCategorie = IdCategorie;
     }
+
 
 
 }

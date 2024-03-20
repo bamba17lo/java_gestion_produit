@@ -56,22 +56,35 @@
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <Button layoutX="15.0" layoutY="388.0" mnemonicParsing="false"  prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #64b7f6;" text="Ajouter" textFill="WHITE">
+                  <Button layoutX="15.0" layoutY="388.0" mnemonicParsing="false" onAction="#btn_ajoutProduit" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #64b7f6;" text="Ajouter" textFill="WHITE">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
-                  <TableView layoutX="346.0" layoutY="64.0" prefHeight="348.0" prefWidth="789.0" style="-fx-background-color: #64b7f6;">
+                  <TableView fx:id="cTable" layoutX="346.0" layoutY="64.0" onMouseClicked="#doubleclique" prefHeight="348.0" prefWidth="789.0" style="-fx-background-color: #64b7f6;">
                     <columns>
-                      <TableColumn prefWidth="59.20001220703125" text="#" />
-                      <TableColumn prefWidth="166.39996337890625" text="Libelle" />
-                        <TableColumn prefWidth="136.0" text="Quantite" />
-                        <TableColumn prefWidth="140.79998779296875" text="Prix Unitaire" />
-                        <TableColumn prefWidth="152.0" text="Categorie" />
-                        <TableColumn prefWidth="176.0" text="Option" />
+                      <TableColumn fx:id="col_id" prefWidth="59.20001220703125" text="#" />
+                      <TableColumn fx:id="col_lib" prefWidth="166.39996337890625" text="Libelle" />
+                        <TableColumn fx:id="col_quantite" prefWidth="136.0" text="Quantite" />
+                        <TableColumn fx:id="col_pU" prefWidth="140.79998779296875" text="Prix Unitaire" />
+                        <TableColumn fx:id="col_categorie" prefWidth="152.0" text="Categorie" />
+                        <TableColumn fx:id="colo_option" prefWidth="176.0" text="Option" />
                     </columns>
                   </TableView>
                   <ComboBox fx:id="cCategorie" layoutX="17.0" layoutY="319.0" prefHeight="26.0" prefWidth="290.0" />
+                  <Button layoutX="111.0" layoutY="388.0" mnemonicParsing="false" onAction="#btn_modifierProduit" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: orange;" text="Modifier" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="210.0" layoutY="388.0" mnemonicParsing="false" onAction="#btn_deleteProduit" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: red;" text="Supprimer" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="cId" disable="true" layoutX="15.0" layoutY="32.0" visible="false" />
+                  <TextField fx:id="cMois" layoutX="18.0" layoutY="435.0" prefHeight="26.0" prefWidth="300.0" visible="false" />
+                  <Button layoutX="874.0" layoutY="436.0" mnemonicParsing="false" onAction="#btn_PDF" prefHeight="26.0" prefWidth="50.0" text="PDF" />
                </children>
                <opaqueInsets>
                   <Insets />

@@ -43,13 +43,24 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
-                  <TableView fx:id="tableCategorie" layoutX="467.0" layoutY="69.0" prefHeight="262.0" prefWidth="551.0" style="-fx-background-color: #64b7f6;">
+                  <Button layoutX="115.0" layoutY="150.0" mnemonicParsing="false" onAction="#btn_modifierCategorie" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: orange;" text="Modifier" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="218.0" layoutY="150.0" mnemonicParsing="false" onAction="#btn_deleteCategorie" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: red;" text="Supprimer" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="tableCategorie" layoutX="467.0" layoutY="69.0" onMouseClicked="#doubleClick" prefHeight="262.0" prefWidth="551.0" style="-fx-background-color: #64b7f6;">
                      <columns>
                         <TableColumn fx:id="col_Id" prefWidth="59.20001220703125" text="#" />
                         <TableColumn fx:id="col_lib" prefWidth="277.60003662109375" text="Libelle" />
                         <TableColumn fx:id="col_option" prefWidth="211.9999877929688" text="Option" />
                      </columns>
                   </TableView>
+                  <TextField fx:id="cId" layoutX="24.0" layoutY="34.0" prefHeight="26.0" prefWidth="305.0" visible="false" />
                </children>
                <opaqueInsets>
                   <Insets />
