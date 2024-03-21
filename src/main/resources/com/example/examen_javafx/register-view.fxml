@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="464.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.RegisterController">
+   <children>
+      <TextField fx:id="cPrenom" layoutX="81.0" layoutY="201.0" prefHeight="26.0" prefWidth="214.0" />
+      <Label layoutX="214.0" layoutY="27.0" prefHeight="32.0" prefWidth="214.0" text="Creer un Compte" textFill="#64b7f6" underline="true">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Label>
+      <Button layoutX="264.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_Inscription" prefHeight="32.0" prefWidth="113.0" style="-fx-background-color: #64b7f6;" text="Valider" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="cTelephone" layoutX="83.0" layoutY="269.0" prefHeight="26.0" prefWidth="214.0" />
+      <TextField fx:id="cEmail" layoutX="352.0" layoutY="137.0" prefHeight="26.0" prefWidth="214.0" />
+      <TextField fx:id="cLogin" layoutX="350.0" layoutY="201.0" prefHeight="26.0" prefWidth="214.0" />
+      <TextField fx:id="cPassword" layoutX="352.0" layoutY="269.0" prefHeight="26.0" prefWidth="214.0" />
+      <TextField fx:id="cNom" layoutX="83.0" layoutY="137.0" prefHeight="26.0" prefWidth="214.0" />
+      <Label layoutX="84.0" layoutY="112.0" prefHeight="24.0" prefWidth="166.0" text="Nom" textFill="#23322d">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="175.0" prefHeight="24.0" prefWidth="166.0" text="Prenom" textFill="#23322d">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="241.0" prefHeight="24.0" prefWidth="166.0" text="Téléphone" textFill="#23322d">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="352.0" layoutY="112.0" prefHeight="24.0" prefWidth="166.0" text="Email" textFill="#23322d">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="351.0" layoutY="175.0" prefHeight="24.0" prefWidth="166.0" text="Login" textFill="#23322d">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="353.0" layoutY="241.0" prefHeight="24.0" prefWidth="166.0" text="Mot de Passe" textFill="#23322d">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
