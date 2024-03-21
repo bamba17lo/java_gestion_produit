@@ -1,5 +1,6 @@
 package com.example.examen_javafx;
 
+import com.example.examen_javafx.model.BD;
 import com.example.examen_javafx.model.CategorieModel;
 import com.example.examen_javafx.model.ProduitModel;
 import com.example.examen_javafx.repository.CategorieRepository;
@@ -12,9 +13,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -100,6 +109,46 @@ public class ProduitController implements Initializable {
         PDFGenerate pdfGenerator = new PDFGenerate();
         String filePath = "liste_produits.pdf";
         pdfGenerator.generatePDF(produits, filePath);
+
+    }
+
+
+    @FXML
+    void btn_Excel(ActionEvent event) throws SQLException {
+        // Récupérer la liste des produits depuis votre modèle ou service
+        List<ProduitModel> produits = produitRepository.getAll();
+        List<CategorieModel> categories = categorieRepository.getNombreProduitsParCategorie();
+
+        // Créer le fichier Excel
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("Liste des produits");
+
+            // Créer l'en-tête du tableau Excel
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("ID");
+            headerRow.createCell(1).setCellValue("Libellé");
+            headerRow.createCell(2).setCellValue("Nombre de Produit");
+            // Ajoutez d'autres en-têtes de colonnes au besoin...
+
+            // Remplir le tableau avec les données des produits
+            int rowNum = 1;
+            for (CategorieModel categorie : categories) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(categorie.getId());
+                row.createCell(1).setCellValue(categorie.getLibelle());
+                row.createCell(2).setCellValue(categorie.getNombreProduits());
+                // Ajoutez d'autres données de produit au besoin...
+            }
+
+            // Écrire le contenu dans le fichier Excel
+            try (FileOutputStream fileOut = new FileOutputStream("liste_produits.xlsx")) {
+                workbook.write(fileOut);
+            }
+
+            System.out.println("Fichier Excel créé avec succès !");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }

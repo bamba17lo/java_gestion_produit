@@ -1,7 +1,6 @@
 package com.example.examen_javafx.repository;
 
 import com.example.examen_javafx.model.BD;
-import com.example.examen_javafx.model.CategorieModel;
 import com.example.examen_javafx.model.ProduitModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ProduitRepository {
     private static Connection connection;
@@ -94,26 +94,7 @@ public class ProduitRepository {
         }
     }
 
-//    public int[] getNombreMois() throws SQLException {
-//
-//        int[] produitsParMois = new int[12]; // Tableau pour stocker le nombre de produits pour chaque mois
-//
-//            // Requête SQL pour récupérer le nombre de produits ajoutés par mois
-//            String sql = "SELECT mois, COUNT(*) AS nombre_de_produits FROM produit GROUP BY mois";
-//
-//            // Préparation de la requête
-//            PreparedStatement statement = connection.prepareStatement(sql);
-//
-//            // Exécution de la requête
-//            ResultSet resultSet = statement.executeQuery();
-//
-//            // Traitement des résultats
-//            while (resultSet.next()) {
-//                int mois = resultSet.getInt("mois"); // Numéro du mois
-//                int nombreProduits = resultSet.getInt("nombre_de_produits"); // Nombre de produits ajoutés ce mois-là
-//                produitsParMois[mois - 1] = nombreProduits; // Stocker le nombre de produits pour ce mois dans le tableau
-//            }
-//        return produitsParMois;
-//    }
+    public void exportProduitsToExcel() {
+            }
 
 }

@@ -6,6 +6,7 @@ module com.example.examen_javafx {
     requires kernel;
     requires layout;
     requires io;
+    requires org.apache.poi.ooxml;
 
 
     opens com.example.examen_javafx to javafx.fxml;

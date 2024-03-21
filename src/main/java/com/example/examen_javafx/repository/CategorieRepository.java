@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CategorieRepository {
     private static Connection connection;
@@ -100,4 +102,35 @@ public class CategorieRepository {
         }
     }
 
+    public List<CategorieModel> getNombreProduitsParCategorie() throws SQLException {
+        List<CategorieModel> categories = new ArrayList<>();
+
+        // Créer la requête SQL pour obtenir les catégories avec leur nombre de produits
+        String sql = "SELECT c.id as id, c.libelle as libelle, COUNT(p.id) AS nombre_produits " +
+                "FROM categorie c " +
+                "LEFT JOIN produit p ON c.id = p.idCategorie " +
+                "GROUP BY c.id, c.libelle";
+
+        // Préparer la requête
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            // Exécuter la requête
+            try (ResultSet resultSet = statement.executeQuery()) {
+                // Parcourir les résultats et créer des objets CategorieModel
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                    String libelle = resultSet.getString("libelle");
+                    String nombreProduits = resultSet.getString("nombre_produits");
+
+                    // Créer un objet CategorieModel avec les données récupérées
+                    CategorieModel categorie = new CategorieModel(libelle,id);
+                    categorie.setNombreProduits(String.valueOf(nombreProduits));
+
+                    // Ajouter l'objet à la liste des catégories
+                    categories.add(categorie);
+                }
+            }
+        }
+
+        return categories;
+    }
 }

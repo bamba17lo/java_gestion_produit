@@ -84,7 +84,8 @@
                   </Button>
                   <TextField fx:id="cId" disable="true" layoutX="15.0" layoutY="32.0" visible="false" />
                   <TextField fx:id="cMois" layoutX="18.0" layoutY="435.0" prefHeight="26.0" prefWidth="300.0" visible="false" />
-                  <Button layoutX="874.0" layoutY="436.0" mnemonicParsing="false" onAction="#btn_PDF" prefHeight="26.0" prefWidth="50.0" text="PDF" />
+                  <Button layoutX="874.0" layoutY="436.0" mnemonicParsing="false" onAction="#btn_PDF" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: blue;" text="Télécharger PDF" textFill="WHITE" />
+                  <Button layoutX="990.0" layoutY="436.0" mnemonicParsing="false" onAction="#btn_Excel" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: blue;" text="Télécharger Excel" textFill="WHITE" />
                </children>
                <opaqueInsets>
                   <Insets />
